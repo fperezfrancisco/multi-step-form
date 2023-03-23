@@ -81,7 +81,6 @@ body {
   font-family: "Ubuntu", sans-serif;
   font-size: 1rem;
   background-color: var(--magnolia);
-  position: relative;
   width: 100vw;
 }
 
@@ -96,6 +95,7 @@ body {
 /* form styling */
 
 #multiStepForm {
+  position: relative;
   width: 100%;
   height: 100vh;
   min-height: 650px;
@@ -137,8 +137,8 @@ body {
 
 .circle {
   border-radius: 50%;
-  width: 35px;
-  height: 35px;
+  width: 36px;
+  height: 36px;
   background-color: transparent;
   border: 1px solid var(--white);
   cursor: pointer;
@@ -165,14 +165,13 @@ body {
   z-index: 2;
   left: 0;
   right: 0;
-  margin: 7rem 1rem;
+  margin: 6.75rem 1rem;
   padding: 2rem;
-  border-radius: 10px;
+  border-radius: 1rem;
   flex-direction: column;
   color: var(--marine-blue);
   text-align: left;
   background-color: var(--white);
-  row-gap: 1.125rem;
 }
 
 .formTitle {
@@ -184,11 +183,14 @@ body {
 
 p {
   color: var(--cool-gray);
-  font-size: 1.125rem;
+  font-size: 1rem;
   font-weight: 400;
+  margin: 0.25rem 0px 1rem;
 }
 
-.formList {
+.formList,
+.radioGroup,
+.addOnsGroup {
   display: flex;
   flex-direction: column;
   row-gap: 1rem;
@@ -206,7 +208,356 @@ p {
 .formLi input {
   width: 100%;
   max-width: 500px;
-  padding: 0.5rem;
+  padding: 0.5rem 1rem;
+  box-shadow: none;
+  border: 1px solid var(--light-gray);
+  border-radius: 4px;
+  color: var(--marine-blue);
+}
+
+.formLi textarea:focus,
+.formLi input:focus,
+.formLi input:active,
+.formLi input:focus-visible {
+  outline: none;
+  outline-color: var(--purplish-blue);
+}
+
+/* plans tab styling */
+
+#planTab {
+  margin-top: 5rem;
+}
+
+.radioGroup {
+  border: none;
+  box-shadow: none;
+  margin-bottom: 1rem;
+}
+
+.plan input[type="radio"] {
+  display: none;
+}
+
+.plan label {
+  height: min-content;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 50px 1fr;
+  align-items: flex-start;
+  justify-items: flex-start;
+  column-gap: 0.5rem;
+  background-color: var(--white);
+  border: 1px solid var(--light-gray);
+  border-radius: 8px;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.plan label p {
+  margin: 0px;
+}
+
+.plan label .radioBtnImg {
+  width: 40px;
+  height: 40px;
+  grid-column: 1;
+  grid-row: 1 / 3;
+}
+
+.plan label .radioTitle,
+.price,
+.offer {
+  grid-column: 2;
+}
+
+.plan .radioTitle {
+  font-weight: 500;
+}
+
+.plan .price {
+  font-size: 0.85rem;
+  font-weight: 400;
+}
+
+.plan .offer {
+  font-size: 0.85rem;
+  color: var(--marine-blue);
+}
+
+.plan input[type="radio"]#arcade:checked:checked ~ .arcadeBtn,
+.plan input[type="radio"]#advanced:checked:checked ~ .advancedBtn,
+.plan input[type="radio"]#pro:checked:checked ~ .proBtn {
+  border-color: var(--purplish-blue);
+  background-color: var(--magnolia);
+}
+
+.plan .billingOptions {
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem;
+  border-radius: 6px;
+  background-color: var(--magnolia);
+  column-gap: 1rem;
+}
+
+.billingOptions .option {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--cool-gray);
+  text-transform: capitalize;
+}
+
+/* The switch - the box around the slider */
+.plan .billingOptions label {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 24px;
+  border: none;
+  background-color: transparent;
+  /*
+  background-color: var(--marine-blue);*/
+}
+
+/* Hide default HTML checkbox */
+.billingOptions .switch input {
+  display: none;
+}
+
+/* The slider */
+.billingOptions .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  max-width: 40px;
+  max-height: 18px;
+  cursor: pointer;
+  background-color: var(--marine-blue);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.billingOptions .slider:before {
+  position: absolute;
+  content: "";
+  height: 14px;
+  width: 14px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.billingOptions input:checked + .slider:before {
+  -webkit-transform: translateX(22px);
+  -ms-transform: translateX(22px);
+  transform: translateX(22px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 1rem;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/* add ons */
+
+.addOnsGroup {
+  border: none;
+  box-shadow: none;
+  margin-bottom: 1rem;
+}
+
+/*
+.addOn input[type="radio"] {
+}*/
+
+.addOn label {
+  height: min-content;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  column-gap: 1rem;
+  background-color: var(--white);
+  border: 1px solid var(--light-gray);
+  border-radius: 8px;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.addOn input {
+  display: none;
+}
+
+.addOn label .checkBox {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 22px;
+  height: 22px;
+  border: 1px solid var(--light-gray);
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.addOn label p {
+  margin: 0px;
+  font-size: 0.85rem;
+}
+
+.addOn label .textBox {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-right: 2rem;
+  font-weight: 400;
+  width: 100%;
+}
+
+.addOn label .textBox .addOnTitle {
+  font-weight: 500;
+}
+
+.addOn label .price {
+  color: var(--purplish-blue);
+  width: 100%;
+  max-width: 60px;
+  text-align: right;
+}
+
+.addOn input[type="checkbox"]#onlineService:checked:checked ~ #onlineService,
+.addOn input[type="checkbox"]#largerStorage:checked:checked ~ #largerStorage,
+.addOn
+  input[type="checkbox"]#customizeProfile:checked:checked
+  ~ #customizeProfile {
+  border-color: var(--purplish-blue);
+  background-color: var(--magnolia);
+}
+
+.addOn
+  input[type="checkbox"]#onlineService:checked:checked
+  ~ #onlineService
+  .checkBox,
+.addOn
+  input[type="checkbox"]#largerStorage:checked:checked
+  ~ #largerStorage
+  .checkBox,
+.addOn
+  input[type="checkbox"]#customizeProfile:checked:checked
+  ~ #customizeProfile
+  .checkBox {
+  background-color: var(--purplish-blue);
+  border: none;
+}
+
+/*
+.addOn
+  input[type="checkbox"]#onlineService:checked:checked
+  ~ #onlineService
+  .checkBox:after {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 9px;
+  background: var(--white);
+  width: 4px;
+  height: 4px;
+  box-shadow: 2px 0 0 white, 4px 0 0 white, 4px -2px 0 white, 4px -4px 0 white,
+    4px -6px 0 white, 4px -8px 0 white;
+  transform: rotate(45deg);
+}*/
+
+/* step 4 styling */
+.finishing p {
+  margin-bottom: 1.5rem;
+}
+
+.finishing .summary {
+  flex-direction: column;
+  width: 100%;
+  row-gap: 0.5rem;
+}
+
+.summary .summaryDetails {
+  width: 100%;
+  border-radius: 10px;
+  padding: 1rem;
+  background-color: var(--magnolia);
+  color: var(--cool-gray);
+  flex-direction: column;
+  border-collapse: collapse;
+}
+
+.summary p {
+  margin: 0px;
+}
+
+.summaryTop {
+  width: 100%;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--light-gray);
+  align-items: center;
+  justify-content: space-between;
+  border-collapse: collapse;
+}
+
+.summaryTop .planTitle {
+  font-weight: 500;
+  color: var(--marine-blue);
+}
+
+.summaryTop .change {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.summaryTop .planPrice {
+  color: var(--marine-blue);
+  font-weight: 500;
+}
+
+.summaryAddons {
+  border-collapse: collapse;
+  width: 100%;
+  padding-top: 0.75rem;
+  flex-direction: column;
+  row-gap: 0.5rem;
+}
+
+.summaryAddons .addOn {
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.summaryAddons .addOn .addOnPrice {
+  color: var(--marine-blue);
+  font-weight: 400;
+}
+
+.summaryTotal {
+  padding: 1rem;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.summaryTotal .totalPrice {
+  color: var(--purplish-blue);
+  font-weight: 700;
 }
 
 /*tab styling end*/
@@ -217,7 +568,7 @@ p {
   z-index: 5;
   width: 100%;
   bottom: 0;
-  padding: 1.25rem;
+  padding: 1rem;
   align-items: center;
   justify-content: space-between;
   background-color: var(--white);
@@ -240,11 +591,162 @@ button {
 }
 
 #goBackBtn {
-  visibility: hidden;
+  background-color: transparent;
+  border: none;
+  visibility: visible;
 }
 
 /*button box styling end*/
 
 .hidden {
   display: none;
+}
+
+/* media queries */
+
+@media only screen and (min-width: 768px) {
+  /* form styling */
+
+  #multiStepForm {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 95vw;
+    height: 100%;
+    max-width: 880px;
+    max-height: 600px;
+    min-height: 400px;
+    background-color: var(--white);
+    grid-template-columns: 280px 1fr;
+    padding: 1rem;
+    border-radius: 10px;
+    column-gap: 2rem;
+  }
+
+  /*side bar styling start*/
+
+  .sideBar {
+    height: 100%;
+    max-width: none;
+    max-height: none;
+    width: 100%;
+    background-color: var(--marine-blue);
+    background-image: url("./assets/images/bg-sidebar-desktop.svg");
+    background-position: center;
+    background-size: cover;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.25rem;
+    grid-column: 1;
+    grid-row: 1 / 3;
+    border-radius: 10px;
+  }
+
+  .steps {
+    margin-top: 0px;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 2rem;
+    padding: 1rem;
+  }
+
+  .step {
+    width: 100%;
+    column-gap: 1.25rem;
+    text-align: left;
+    color: var(--white);
+    align-items: center;
+    line-height: 1.25;
+  }
+
+  .label {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .stepTitle {
+    font-size: 0.85rem;
+    font-weight: lighter;
+    text-transform: uppercase;
+    color: var(--light-gray);
+  }
+
+  .stepSubheading {
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 0.95rem;
+  }
+
+  /*side bar styling end*/
+
+  .tab,
+  .formBtnBox {
+    background-color: transparent;
+    position: relative;
+    grid-column: 2;
+    padding-right: 3rem;
+  }
+
+  .tab {
+    margin: 0;
+    row-gap: 0px;
+  }
+
+  .tab .formTitle {
+    margin-bottom: 0.25rem;
+  }
+
+  /*
+  .tab p {
+    margin-bottom: 2.5rem;
+  }*/
+
+  .info .formList {
+    row-gap: 1.5rem;
+  }
+
+  .info .formLi {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 0.125rem;
+  }
+
+  /* plans styling */
+
+  #planTab {
+    margin-top: unset;
+  }
+
+  .plan .radioGroup {
+    flex-direction: row;
+    column-gap: 1rem;
+  }
+
+  .plan label {
+    height: auto;
+    grid-template-columns: 1fr;
+  }
+
+  .plan label .radioBtnImg,
+  .plan label .radioTitle,
+  .plan label .price,
+  .plan label .offer {
+    grid-column: 1;
+    grid-row: unset;
+  }
+
+  .plan label .radioBtnImg {
+    margin-bottom: 2.25rem;
+  }
+
+  .formBtnBox {
+    align-items: flex-end;
+  }
 }

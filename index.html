@@ -46,21 +46,21 @@
               <h3 class="stepSubheading">Your Info</h3>
             </div>
           </div>
-          <div class="step plan">
+          <div class="step plan flex">
             <span class="number circle"> 2 </span>
             <div class="label desktopView">
               <h2 class="stepTitle">Step 2</h2>
-              <h3 class="stepSubheading">Select Your Plan</h3>
+              <h3 class="stepSubheading">Select Plan</h3>
             </div>
           </div>
-          <div class="step add-on">
+          <div class="step add-on flex">
             <span class="number circle"> 3 </span>
             <div class="label desktopView">
               <h2 class="stepTitle">Step 3</h2>
               <h3 class="stepSubheading">Add-ons</h3>
             </div>
           </div>
-          <div class="step summary">
+          <div class="step summary flex">
             <span class="number circle"> 4 </span>
             <div class="label desktopView">
               <h2 class="stepTitle">Step 4</h2>
@@ -71,7 +71,7 @@
       </div>
       <!-- Sidebar end -->
       <!-- Step 1 start -->
-      <div class="tab flex activeTab" id="infoTab">
+      <div class="tab flex info hidden" id="infoTab">
         <h1 class="formTitle">Personal Info</h1>
         <p class="description">
           Please provide your name, email address, and phone number.
@@ -84,6 +84,7 @@
               name="name"
               id="name"
               placeholder="e.g. Stephen King"
+              required
             />
           </li>
           <li class="formLi">
@@ -93,94 +94,194 @@
               name="email"
               id="email"
               placeholder="e.g. stephenking@lorem.com"
+              required
             />
           </li>
           <li class="formLi">
             <label for="phoneNumber">Phone Number</label>
             <input
-              type="number"
+              type="tel"
               name="phoneNumber"
               id="phoneNumber"
               placeholder="e.g. +1 234 567 890"
+              required
             />
           </li>
         </ul>
       </div>
-
       <!-- Step 1 end -->
-
       <!-- Step 2 start -->
-
-      <div class="tab flex hidden" id="planTab">
+      <div class="tab flex plan hidden" id="planTab">
         <h1 class="formTitle">Select Your Plan</h1>
         <p class="description">
           You have the option of monthly or yearly billing.
         </p>
-        <ul class="formList">
-          <li class="formLi">
-            <label for="arcade" class="planRadioBtn arcadeBtn">
-              <img
-                src="./assets/images/icon-arcade.svg"
-                alt="arcade"
-                class="radioBtnImg"
-              />
-              <h2 class="radioTitle">Arcade</h2>
-              <p class="price">$90/yr</p>
-              <p class="offer">2 months free</p>
-            </label>
-            <input type="radio" name="arcade" id="arcade" />
-          </li>
-          <li class="formLi">
-            <label for="advanced" class="planRadioBtn advancedBtn">
-              <img
-                src="./assets/images/icon-advanced.svg"
-                alt="advanced"
-                class="radioBtnImg"
-              />
-              <h2 class="radioTitle">Advanced</h2>
-              <p class="price">$120/yr</p>
-              <p class="offer">2 months free</p>
-            </label>
-            <input type="radio" name="advanced" id="advanced" />
-          </li>
-          <li class="formLi">
-            <label for="arcade" class="planRadioBtn arcadeBtn">
-              <img
-                src="./assets/images/icon-pro.svg"
-                alt="pro"
-                class="radioBtnImg"
-              />
-              <h2 class="radioTitle">Pro</h2>
-              <p class="price">$150/yr</p>
-              <p class="offer">2 months free</p>
-            </label>
-            <input type="radio" name="pro" id="pro" />
-          </li>
-        </ul>
+        <fieldset class="radioGroup" role="form">
+          <input type="radio" name="plan" id="arcade" value="arcade" />
+          <input type="radio" name="plan" id="advanced" value="advanced" />
+          <input type="radio" name="plan" id="pro" value="pro" />
+          <label for="arcade" class="planRadioBtn arcadeBtn">
+            <img
+              src="./assets/images/icon-arcade.svg"
+              alt="arcade"
+              class="radioBtnImg"
+            />
+            <h2 class="radioTitle">Arcade</h2>
+            <p class="price">$90/yr</p>
+            <p class="offer">2 months free</p>
+          </label>
+          <label for="advanced" class="planRadioBtn advancedBtn">
+            <img
+              src="./assets/images/icon-advanced.svg"
+              alt="advanced"
+              class="radioBtnImg"
+            />
+            <h2 class="radioTitle">Advanced</h2>
+            <p class="price">$120/yr</p>
+            <p class="offer">2 months free</p>
+          </label>
+
+          <label for="pro" class="planRadioBtn proBtn">
+            <img
+              src="./assets/images/icon-pro.svg"
+              alt="pro"
+              class="radioBtnImg"
+            />
+            <h2 class="radioTitle">Pro</h2>
+            <p class="price">$150/yr</p>
+            <p class="offer">2 months free</p>
+          </label>
+        </fieldset>
+        <div class="billingOptions flex">
+          <span class="option monthly">monthly</span>
+          <label class="switch yearlySwitch">
+            <input type="checkbox" />
+            <span class="slider round"></span>
+          </label>
+          <span class="option yearly">yearly</span>
+        </div>
       </div>
-
       <!-- Step 2 end -->
-
       <!-- Step 3 start -->
+      <div class="tab flex addOn hidden" id="addOnTab">
+        <h1 class="formTitle">Pick add-ons</h1>
+        <p class="description">Add-ons help enhance your gaming experience.</p>
+        <fieldset class="addOnsGroup" role="form">
+          <input
+            type="checkbox"
+            name="addOn"
+            id="onlineService"
+            value="onlineService"
+          />
+          <input
+            type="checkbox"
+            name="addOn"
+            id="largerStorage"
+            value="largerStorage"
+          />
 
-      <!--
+          <input
+            type="checkbox"
+            name="addOn"
+            id="customizeProfile"
+            value="customizeProfile"
+          />
 
-      Pick add-ons Add-ons help enhance your gaming experience. Online service
-      Access to multiplayer games +$1/mo Larger storage Extra 1TB of cloud save
-      +$2/mo Customizable Profile Custom theme on your profile +$2/mo Go Back
-      Next Step  
-      -->
+          <label
+            for="onlineService"
+            class="addOnBtn onlineServiceBtn"
+            id="onlineService"
+          >
+            <span class="checkBox">
+              <img
+                src="./assets/images/icon-checkmark.svg"
+                alt=""
+                class="checkmarkImg"
+              />
+            </span>
+            <div class="textBox">
+              <h2 class="addOnTitle">Online service</h2>
+              <p class="subheading">Access to multiplayer games</p>
+            </div>
+            <p class="price">+$10/yr</p>
+          </label>
+          <label
+            for="largerStorage"
+            class="addOnBtn largerStorageBtn"
+            id="largerStorage"
+          >
+            <span class="checkBox">
+              <img
+                src="./assets/images/icon-checkmark.svg"
+                alt=""
+                class="checkmarkImg"
+              />
+            </span>
 
-      <div class="tab flex hidden"></div>
+            <div class="textBox">
+              <h2 class="addOnTitle">Larger storage</h2>
+              <p class="subheading">Extra 1TB of cloud save</p>
+            </div>
+            <p class="price">+$20/yr</p>
+          </label>
 
+          <label
+            for="customizeProfile"
+            class="addOnBtn customizeProfileBtn"
+            id="customizeProfile"
+          >
+            <span class="checkBox">
+              <img
+                src="./assets/images/icon-checkmark.svg"
+                alt=""
+                class="checkmarkImg"
+              />
+            </span>
+
+            <div class="textBox">
+              <h2 class="addOnTitle">Customizable Profile</h2>
+              <p class="subheading">Custom theme on your profile</p>
+            </div>
+            <p class="price">+$20/yr</p>
+          </label>
+        </fieldset>
+      </div>
       <!-- Step 3 end -->
-
       <!-- Step 4 start 
-
-      Finishing up Double-check everything looks OK before confirming.
+        
       -->
 
-      <div class="tab flex hidden"></div>
+      <div class="tab flex finishing" id="finishingTab">
+        <h1 class="formTitle">Finishing up</h1>
+        <p class="description">
+          Double-check everything looks OK before confirming.
+        </p>
+        <div class="summary flex">
+          <div class="summaryDetails flex">
+            <div class="summaryTop flex">
+              <div class="planSelected">
+                <p class="planTitle">Arcade (Monthly)</p>
+                <p class="change">Change</p>
+              </div>
+              <div class="planPrice">$9/mo</div>
+            </div>
+            <div class="summaryAddons flex">
+              <div class="addOn flex">
+                <p class="addOnTitle">Online Service</p>
+                <div class="addOnPrice">+$1/mo</div>
+              </div>
+              <div class="addOn flex">
+                <p class="addOnTitle">Larger storage</p>
+                <div class="addOnPrice">+$2/mo</div>
+              </div>
+            </div>
+          </div>
+          <div class="summaryTotal flex">
+            <p class="totalText">Total (per month)</p>
+            <div class="totalPrice">+$12/mo</div>
+          </div>
+        </div>
+      </div>
 
       <!-- Dynamically add subscription and add-on selections here 
 
