@@ -126,10 +126,17 @@
           You have the option of monthly or yearly billing.
         </p>
         <fieldset class="radioGroup" role="form">
-          <input type="radio" name="plan" id="arcade" value="arcade" checked />
+          <input
+            type="radio"
+            name="plan"
+            id="arcade"
+            value="arcade"
+            checked
+            required
+          />
           <input type="radio" name="plan" id="advanced" value="advanced" />
           <input type="radio" name="plan" id="pro" value="pro" />
-          <label for="arcade" class="planRadioBtn arcadeBtn">
+          <label for="arcade" class="planRadioBtn arcadeBtn" role="radio">
             <img
               src="./assets/images/icon-arcade.svg"
               alt="arcade"
@@ -139,7 +146,7 @@
             <p class="price arcadePrice" id="radioPrice">$9/mo</p>
             <p class="offer hidden" id="arcadeOffer">2 months free</p>
           </label>
-          <label for="advanced" class="planRadioBtn advancedBtn">
+          <label for="advanced" class="planRadioBtn advancedBtn" role="radio">
             <img
               src="./assets/images/icon-advanced.svg"
               alt="advanced"
@@ -150,7 +157,7 @@
             <p class="offer hidden" id="advancedOffer">2 months free</p>
           </label>
 
-          <label for="pro" class="planRadioBtn proBtn">
+          <label for="pro" class="planRadioBtn proBtn" role="radio">
             <img
               src="./assets/images/icon-pro.svg"
               alt="pro"
@@ -299,11 +306,23 @@
 
       -->
 
-      <div class="tab flex hidden" id="thankYouTab"></div>
+      <div class="tab flex thankYou hidden" id="thankYouTab">
+        <img
+          src="./assets/images/icon-thank-you.svg"
+          alt="thank you icon"
+          class="thankYouIcon"
+        />
+        <h1 class="formTitle">Thank you!</h1>
+        <p class="description">
+          Thanks for confirming your subscription! We hope you have fun using
+          our platform. If you ever need support, please feel free to email us
+          at support@loremgaming.com.
+        </p>
+      </div>
 
       <!-- Step 5 end -->
 
-      <div class="formBtnBox flex">
+      <div class="formBtnBox flex" id="formBtnBox">
         <button type="button" id="goBackBtn" class="formBtn invisible">
           Go Back
         </button>

@@ -1,5 +1,6 @@
 const nextBtn = document.querySelector("#nextBtn");
 const prevBtn = document.querySelector("#goBackBtn");
+const formBtnBox = document.getElementById("formBtnBox");
 
 const infoTab = document.getElementById("infoTab");
 const planTab = document.getElementById("planTab");
@@ -116,6 +117,11 @@ function prevTab() {
 
   if (currIndex === 1) {
     prevBtn.classList.add("invisible");
+  }
+
+  if (currIndex === 3) {
+    nextBtn.textContent = "Next Step";
+    nextBtn.style.backgroundColor = "var(--marine-blue)";
   }
 
   currIndex--;
@@ -245,9 +251,6 @@ function formValidation() {
         }
       }
     }
-    console.log(selectedPlan);
-    console.log(subType);
-    console.log(totalPrice);
 
     /**set up the next tab */
 
@@ -261,10 +264,15 @@ function formValidation() {
       finalPrice.textContent = `+$${totalPrice + addOnTotal}/yr`;
     }
 
+    nextBtn.textContent = "Confirm";
+    nextBtn.style.backgroundColor = "var(--purplish-blue)";
+
     return nextTab();
   }
 
   if (currIndex === 3) {
+    formBtnBox.classList.add("hidden");
+    return nextTab();
   }
 }
 

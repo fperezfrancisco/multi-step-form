@@ -141,7 +141,6 @@ body {
   height: 36px;
   background-color: transparent;
   border: 1px solid var(--white);
-  cursor: pointer;
 }
 
 .number {
@@ -220,7 +219,6 @@ p {
 .formLi input:focus,
 .formLi input:active,
 .formLi input:focus-visible {
-  outline: none;
   outline-color: var(--purplish-blue);
 }
 
@@ -291,6 +289,12 @@ p {
 .plan input[type="radio"]#pro:checked:checked ~ .proBtn {
   border-color: var(--purplish-blue);
   background-color: var(--magnolia);
+}
+
+.plan input[type="radio"]#arcade:hover ~ .arcadeBtn,
+.plan input[type="radio"]#advanced:hover ~ .advancedBtn,
+.plan input[type="radio"]#pro:hover ~ .proBtn {
+  border-color: var(--purplish-blue);
 }
 
 .plan .billingOptions {
@@ -447,6 +451,12 @@ p {
   background-color: var(--magnolia);
 }
 
+.addOn input[type="checkbox"]#onlineService:hover ~ #onlineService,
+.addOn input[type="checkbox"]#largerStorage:hover ~ #largerStorage,
+.addOn input[type="checkbox"]#customizeProfile:hover ~ #customizeProfile {
+  border-color: var(--purplish-blue);
+}
+
 .addOn
   input[type="checkbox"]#onlineService:checked:checked
   ~ #onlineService
@@ -562,6 +572,19 @@ p {
   font-weight: 700;
 }
 
+.thankYou {
+  row-gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.thankYouIcon {
+  max-width: 80px;
+  max-height: 80px;
+  margin-bottom: 1.5rem;
+}
+
 /*tab styling end*/
 
 /*button box styling start*/
@@ -592,9 +615,19 @@ button {
   color: var(--white);
 }
 
+#nextBtn:hover,
+#nextBtn:focus {
+  opacity: 0.85;
+}
+
 #goBackBtn {
   background-color: transparent;
   border: none;
+}
+
+#goBackBtn:hover,
+#goBackBtn:focus {
+  color: var(--marine-blue);
 }
 
 /*button box styling end*/
@@ -763,6 +796,11 @@ button {
 
   .plan label .radioBtnImg {
     margin-bottom: 2.25rem;
+  }
+
+  .thankYou {
+    height: 100%;
+    grid-row: 1 / 3;
   }
 
   .formBtnBox {
