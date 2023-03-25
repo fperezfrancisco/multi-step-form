@@ -442,31 +442,31 @@ p {
   text-align: right;
 }
 
-.addOn input[type="checkbox"]#onlineService:checked:checked ~ #onlineService,
-.addOn input[type="checkbox"]#largerStorage:checked:checked ~ #largerStorage,
+.addOn input[type="checkbox"]#onlineServiceInp:checked:checked ~ #onlineService,
+.addOn input[type="checkbox"]#largerStorageInp:checked:checked ~ #largerStorage,
 .addOn
-  input[type="checkbox"]#customizeProfile:checked:checked
+  input[type="checkbox"]#customizeProfileInp:checked:checked
   ~ #customizeProfile {
   border-color: var(--purplish-blue);
   background-color: var(--magnolia);
 }
 
-.addOn input[type="checkbox"]#onlineService:hover ~ #onlineService,
-.addOn input[type="checkbox"]#largerStorage:hover ~ #largerStorage,
-.addOn input[type="checkbox"]#customizeProfile:hover ~ #customizeProfile {
+.addOn input[type="checkbox"]#onlineServiceInp:hover ~ #onlineService,
+.addOn input[type="checkbox"]#largerStorageInp:hover ~ #largerStorage,
+.addOn input[type="checkbox"]#customizeProfileInp:hover ~ #customizeProfile {
   border-color: var(--purplish-blue);
 }
 
 .addOn
-  input[type="checkbox"]#onlineService:checked:checked
+  input[type="checkbox"]#onlineServiceInp:checked:checked
   ~ #onlineService
   .checkBox,
 .addOn
-  input[type="checkbox"]#largerStorage:checked:checked
+  input[type="checkbox"]#largerStorageInp:checked:checked
   ~ #largerStorage
   .checkBox,
 .addOn
-  input[type="checkbox"]#customizeProfile:checked:checked
+  input[type="checkbox"]#customizeProfileInp:checked:checked
   ~ #customizeProfile
   .checkBox {
   background-color: var(--purplish-blue);
